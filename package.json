@@ -1,0 +1,19 @@
+{
+  "name": "my-guidelines",
+  "version": "1.0.0",
+  "description": "My developer guidelines",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github-my:Pablo-Francisco-Moura/my-guidelines.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "vitepress": "^2.0.0-alpha.12"
+  }
+}
