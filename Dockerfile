@@ -16,4 +16,5 @@ COPY . .
 EXPOSE 5174
 
 # Rodar VitePress dev aceitando conexões externas
-CMD ["npx", "vitepress", "dev", "docs", "--host"]
+CMD ["npx", "vitepress", "dev", "docs", "--host", "--port", "5174"]
+
