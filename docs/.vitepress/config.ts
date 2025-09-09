@@ -6,13 +6,13 @@ export default defineConfig({
   themeConfig: {
     nav: [
       { text: "Home", link: "/" },
-      { text: "Commit Patterns", link: "/commit-patterns" },
+      //   { text: "Commit Patterns", link: "/commit-patterns" },
     ],
     sidebar: [
       {
         text: "Guide",
         items: [
-          { text: "Introduction", link: "/" },
+          { text: "Home", link: "/" },
           { text: "Commit Patterns", link: "/commit-patterns" },
         ],
       },
