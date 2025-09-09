@@ -1,2 +1,3 @@
 # my-guidelines
-My developer guidelines
+
+My developer guidelines and best practices.
