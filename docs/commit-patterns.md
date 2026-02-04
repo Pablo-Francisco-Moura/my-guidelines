@@ -4,6 +4,7 @@ Meus commits seguem uma estrutura clara para facilitar leitura, histórico e aut
 
 <script setup lang="ts">
 import { commitPatterns } from './.vitepress/commitPatterns'
+
 </script>
 
 <div style="display: flex; flex-wrap: wrap; gap: 8px;">

@@ -202,4 +202,25 @@ export const commitPatterns: TypeCommitPattern[] = [
     description: "Configurações de ambiente e ajustes do projeto.",
     translation: "Environment settings and project adjustments.",
   },
+  {
+    emoji: "🗄️",
+    tag: "Migration",
+    description:
+      "Criação, alteração ou remoção de estruturas no banco de dados (tabelas, colunas, índices, constraints, seeds e ajustes de schema).",
+    translation:
+      "Creation, alteration or removal of structures in the database.",
+  },
+  {
+    emoji: "🧩",
+    tag: "Module",
+    description: "Criação ou ajuste de módulos do projeto.",
+    translation: "Creation or adjustment of project modules.",
+  },
+  {
+    emoji: "🌐",
+    tag: "Endpoint",
+    description:
+      "Implementação ou alteração de endpoints da API (rotas, métodos HTTP, handlers, validações básicas e contratos de entrada/saída).",
+    translation: "Implementation or modification of API endpoints.",
+  },
 ];
