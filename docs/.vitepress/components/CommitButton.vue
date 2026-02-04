@@ -31,7 +31,7 @@ const copyToClipboard = async () => {
   margin: 0.25rem;
   cursor: pointer;
   padding: 0.5rem 1rem;
-  transition: background-color 0.2s;
+  transition: background-color 1s;
   border-radius: 6px;
 }
 .commit-button:hover {
