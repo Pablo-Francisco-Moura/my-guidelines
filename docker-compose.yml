@@ -1,0 +1,14 @@
+version: "3.9"
+
+services:
+  my_guidelines:
+    build: .
+    container_name: my_guidelines
+    ports:
+      - "5176:5176"
+    environment:
+      - PORT=5176
+    volumes:
+      - .:/app
+    command: sh -c "npx vitepress dev docs --host --port 5176"
+    restart: unless-stopped
