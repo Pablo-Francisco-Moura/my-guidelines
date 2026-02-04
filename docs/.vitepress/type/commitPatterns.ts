@@ -1,6 +1,6 @@
 export type TypeCommitPattern = {
-  emoji: string;
   tag: string;
+  emoji: string;
   description: string;
   translation: string;
 };

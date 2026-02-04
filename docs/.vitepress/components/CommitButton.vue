@@ -12,10 +12,10 @@ interface Props {
   translation: string;
 }
 
-const { tag, emoji, translation, description } = defineProps<Props>();
+const props = defineProps<Props>();
 
 const copyToClipboard = async () => {
-  const text = `${emoji} ${tag}: ${translation}`;
+  const text = `${props.emoji} ${props.tag}: ${props.translation}`;
   try {
     await navigator.clipboard.writeText(text);
     alert(`Copied: ${text}`);
