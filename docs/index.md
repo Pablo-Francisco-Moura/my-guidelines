@@ -1,4 +1,4 @@
-# 👋 Welcome to My Guidelines
+# My Guidelines
 
 Bem-vindo ao meu guia pessoal de desenvolvimento! Este espaço terá documentação dos meus padrões, boas práticas e diretrizes que uso no dia a dia como desenvolvedor.
 
