@@ -11,10 +11,12 @@
             <div class="copy-text">
               <code>{{ text }}</code>
             </div>
-            <p class="success-message">Copiado para a área de transferência!</p>
+            <p class="success-message">{{ message }}</p>
           </div>
           <div class="modal-footer">
-            <button class="btn-primary" @click="close">Fechar</button>
+            <button class="btn-primary" @click="close">
+              {{ closeButtonText }}
+            </button>
           </div>
         </div>
       </div>
@@ -23,13 +25,15 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from "vue";
+import { useI18n } from "../locales/i18n";
 
 interface Props {
   isOpen: boolean;
   title: string;
   text: string;
   isSuccess?: boolean;
+  message?: string;
+  closeButtonText?: string;
 }
 
 const props = defineProps<Props>();
@@ -37,6 +41,8 @@ const props = defineProps<Props>();
 const emit = defineEmits<{
   close: [];
 }>();
+
+const { t } = useI18n();
 
 const close = () => {
   emit("close");

@@ -7,6 +7,8 @@
       :isOpen="showModal"
       :title="modalTitle"
       :text="copiedText"
+      :message="modalMessage"
+      :closeButtonText="t('modal.button.close')"
       :isSuccess="isSuccess"
       @close="showModal = false"
     />
@@ -16,6 +18,7 @@
 <script setup lang="ts">
 import { ref } from "vue";
 import Modal from "./Modal.vue";
+import { useI18n } from "../locales/i18n";
 
 interface Props {
   tag: string;
@@ -25,10 +28,12 @@ interface Props {
 }
 
 const props = defineProps<Props>();
+const { t } = useI18n();
 
 const showModal = ref(false);
 const copiedText = ref("");
 const modalTitle = ref("");
+const modalMessage = ref("");
 const isSuccess = ref(false);
 
 const copyToClipboard = async () => {
@@ -36,13 +41,15 @@ const copyToClipboard = async () => {
   try {
     await navigator.clipboard.writeText(text);
     copiedText.value = text;
-    modalTitle.value = "Padrão de Commit Copiado!";
+    modalTitle.value = t("modal.title.success");
+    modalMessage.value = t("modal.message.success");
     isSuccess.value = true;
     showModal.value = true;
   } catch (err) {
     console.error("Failed to copy: ", err);
-    modalTitle.value = "Erro ao copiar";
-    copiedText.value = "Não foi possível copiar. Tente novamente.";
+    modalTitle.value = t("modal.title.error");
+    copiedText.value = text;
+    modalMessage.value = t("modal.message.error");
     isSuccess.value = false;
     showModal.value = true;
   }
