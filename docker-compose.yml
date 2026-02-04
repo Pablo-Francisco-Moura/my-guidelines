@@ -3,11 +3,12 @@ version: "3.9"
 services:
   my_guidelines:
     build: .
-    container_nam e: my_guidelines
+    container_name: my_guidelines
     ports:
-      - "5174:5174" # Porta no host : Porta no container
+      - "5176:5176"
     environment:
-      - PORT=5174 # Porta usada pelo VitePress dentro do container
+      - PORT=5176
     volumes:
-      - .:/app # Monta o projeto local dentro do container (hot reload)
-    command: sh -c "npx vitepress dev docs --host --port 5174"
+      - .:/app
+    command: sh -c "npx vitepress dev docs --host --port 5176"
+    restart: unless-stopped
