@@ -92,7 +92,6 @@ const close = () => {
 }
 
 .close-btn {
-  background: none;
   border: none;
   font-size: 1.5rem;
   cursor: pointer;
@@ -151,7 +150,7 @@ const close = () => {
 }
 
 .btn-primary:hover {
-  background: var(--vp-c-brand-dark);
+  background: #c91414;
 }
 
 .fade-enter-active,

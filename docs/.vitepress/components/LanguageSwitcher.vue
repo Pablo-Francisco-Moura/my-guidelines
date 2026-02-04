@@ -5,28 +5,38 @@
       :class="{ active: currentLanguage === 'pt' }"
       class="lang-btn"
     >
-      🇵🇧 Português
+      <img src="/flags/br.svg" alt="Bandeira do Brasil" class="flag" /> PT
     </button>
     <button
       @click="setLanguage('en')"
       :class="{ active: currentLanguage === 'en' }"
       class="lang-btn"
     >
-      🇺🇸 English
+      <img src="/flags/us.svg" alt="Bandeira dos EUA" class="flag" /> EN
     </button>
   </div>
 </template>
 
 <script setup lang="ts">
 import { ref } from "vue";
-import { getSystemLanguage, type Language } from "../locales/i18n";
 
-const currentLanguage = ref<Language>(getSystemLanguage());
+function getSystemLanguage() {
+  if (typeof localStorage !== "undefined") {
+    const saved = localStorage.getItem("vitepress-language");
+    if (saved === "pt" || saved === "en") return saved;
+  }
+  if (typeof navigator !== "undefined") {
+    const lang = navigator.language.split("-")[0];
+    return lang === "pt" ? "pt" : "en";
+  }
+  return "en";
+}
 
-const setLanguage = (lang: Language) => {
+const currentLanguage = ref(getSystemLanguage());
+
+const setLanguage = (lang) => {
   currentLanguage.value = lang;
   localStorage.setItem("vitepress-language", lang);
-  // Reload page to update content
   window.location.reload();
 };
 </script>
@@ -37,10 +47,19 @@ const setLanguage = (lang: Language) => {
   gap: 0.5rem;
   margin-bottom: 2rem;
   justify-content: center;
+  background: transparent !important;
+}
+
+.flag {
+  width: 1.5em;
+  height: 1.5em;
+  margin-right: 0.3em;
+  vertical-align: middle;
+  display: inline-block;
 }
 
 .lang-btn {
-  padding: 0.5rem 1rem;
+  padding: 0.1rem 0.5rem;
   border: 2px solid var(--vp-c-divider);
   background: var(--vp-c-bg);
   color: var(--vp-c-text-1);
